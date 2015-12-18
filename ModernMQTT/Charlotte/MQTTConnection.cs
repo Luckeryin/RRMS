@@ -48,14 +48,14 @@ namespace Charlotte
                     _client.Connect(_clientId, _username, _password);
                 }
             }
-            catch (MqttConnectionException e)
+            catch (MqttConnectionException)
             {
                 // LogTo.ErrorException("Couldn't connect to MQTT broker", e);
                 throw;
             }
-            catch (MqttCommunicationException e)
+            catch (MqttCommunicationException)
             {
-                // Log
+                // LogTo.ErrorException("Couldn't communicate", e);
                 throw;
             }
         }
